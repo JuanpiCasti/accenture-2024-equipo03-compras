@@ -1,0 +1,17 @@
+### Send POST request with json body
+POST http://localhost:8080/orden-compra
+Content-Type: application/json
+
+{
+  "idProveedor": 999,
+  "medioDePago": "CUENTA_CORRIENTE",
+  "detalles": [
+    {
+      "idProducto": 999,
+      "cantidad": 999
+    }
+  ]
+}
+
+### GET
+GET http://localhost:8080/orden-compra

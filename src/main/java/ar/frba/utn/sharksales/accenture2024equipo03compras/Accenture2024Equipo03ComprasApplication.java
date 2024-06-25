@@ -19,5 +19,4 @@ public class Accenture2024Equipo03ComprasApplication {
     public static void main(String[] args) {
         SpringApplication.run(Accenture2024Equipo03ComprasApplication.class, args);
     }
-
 }

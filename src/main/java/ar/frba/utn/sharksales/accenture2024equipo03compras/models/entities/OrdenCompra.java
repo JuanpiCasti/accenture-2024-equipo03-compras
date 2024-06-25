@@ -28,7 +28,7 @@ public class OrdenCompra  {
     @Column
     private LocalDateTime fechaEntrega = null;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "orden_compra_id", referencedColumnName = "id")
     private List<ItemOrdenCompra> detalles = new ArrayList<>();
 
