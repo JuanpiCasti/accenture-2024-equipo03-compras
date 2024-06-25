@@ -4,10 +4,12 @@ import ar.frba.utn.sharksales.accenture2024equipo03compras.runners.RabbitAmqpRec
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableFeignClients
 @EnableScheduling
 public class Accenture2024Equipo03ComprasApplication {
 

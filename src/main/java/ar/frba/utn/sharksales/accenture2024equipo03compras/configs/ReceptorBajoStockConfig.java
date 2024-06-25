@@ -19,4 +19,5 @@ public class ReceptorBajoStockConfig {
     public ReceptorBajoStock receiver() {
         return new ReceptorBajoStock();
     }
+
 }
