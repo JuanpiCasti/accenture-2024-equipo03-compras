@@ -6,6 +6,7 @@ import ar.frba.utn.sharksales.accenture2024equipo03compras.models.entities.ItemO
 import ar.frba.utn.sharksales.accenture2024equipo03compras.models.entities.MedioDePago;
 import ar.frba.utn.sharksales.accenture2024equipo03compras.models.entities.OrdenCompra;
 import ar.frba.utn.sharksales.accenture2024equipo03compras.models.repositories.OrdenCompraRepository;
+import ar.frba.utn.sharksales.accenture2024equipo03inventario.DTOinput.OperacionDTO;
 import com.rabbitmq.client.Delivery;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -25,14 +26,16 @@ public class ReceptorBajoStock {
     ProductClient productClient;
 
     @RabbitHandler
-    public void receive(byte[] in) {
-        String s = new String(in);
-        List<String> argList = List.of(s.split(","));
+    public void receive(OperacionDTO in) {
 
-        Long idProducto = Long.parseLong(argList.get(0));
-        Integer cantidad = Integer.parseInt(argList.get(1));
+        // Print received values
+        System.out.println("Received: " + in.getFecha().toString());
+        System.out.println("Received: " + in.getProductoid());
+        System.out.println("Received: " + in.getCantidad());
 
-        // TODO: Ir a buscar id del proveedor de ese producto (Feign) -- Por estas cosas vendria bien graphql
+
+        Long idProducto = in.getProductoid();
+        Integer cantidad = in.getCantidad();
 
         try {
             ProductoDTO productoDTO = productClient.getProductById(idProducto);
