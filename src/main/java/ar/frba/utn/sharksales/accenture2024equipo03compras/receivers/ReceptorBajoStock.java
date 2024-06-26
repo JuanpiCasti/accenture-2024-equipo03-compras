@@ -39,7 +39,8 @@ public class ReceptorBajoStock {
             Long idProveedor = productoDTO.getProveedor().getId();
             System.out.println("EL ID DEL PROVEEDOR ES: " + idProveedor);
 
-            BigDecimal precio = BigDecimal.valueOf(1000.0);
+            BigDecimal precio = productoDTO.getPrecioCompra();
+            System.out.println("EL PRECIO DEL PRODUCTO ES: " + precio);
 
             // Crear orden de compra con ese proveedor
             // Agregar item a la orden de compra
