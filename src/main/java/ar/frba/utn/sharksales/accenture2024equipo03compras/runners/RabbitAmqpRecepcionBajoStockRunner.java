@@ -12,6 +12,6 @@ public class RabbitAmqpRecepcionBajoStockRunner implements CommandLineRunner {
 
     @Override
     public void run(String... arg0) throws Exception {
-        System.out.println("Escuchando ");
+        System.out.println("Escuchando bajas de stock...");
     }
 }
